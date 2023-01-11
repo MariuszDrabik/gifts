@@ -1,0 +1,12 @@
+{
+  "name": "gifts",
+  "version": "1.0.0",
+  "description": "Testowy programik",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "npx nodemon index.js"
+  },
+  "author": "Mario",
+  "license": "ISC"
+}
