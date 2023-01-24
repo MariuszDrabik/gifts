@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Testowy programik",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "test",
     "start": "npx nodemon index.js"
@@ -10,6 +11,10 @@
   "author": "Mario",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.0.1"
   }
 }
