@@ -1,0 +1,27 @@
+{{>head seo='Lista prezentów'}}
+
+    <h1>Lista prezentów</h1>
+    <ul>
+        {{#each gifts}}
+            <li>
+                {{this.id}}:  
+                {{this.name}}, 
+                {{this.count}}, 
+                <button>Zapisz prezent</button>
+
+            </li>
+        {{/each}}
+    </ul>
+
+<h2>Dodaj prezent</h2>
+<form>
+    <label for="">
+        Nazwa
+        <input >
+    </label>
+    <label for="">
+        Ilość w magazynie
+        <input type="number" min="0">
+    </label>
+    <button type="submit">Dodaj</button>
+</form>

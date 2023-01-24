@@ -1,0 +1,18 @@
+html {
+    font-size: 10px
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    font-size: 1.8rem;
+    list-style: none;
+}
+
+body {
+    font-size: 1.6rem;
+}

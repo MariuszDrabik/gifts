@@ -1,0 +1,39 @@
+{{>head seo='Lista dzieci'}}
+
+    <h1>Lista Dzieci</h1>
+    <ul>
+        {{#each children as | chid |}}
+            <li>
+                {{this.id}}:  
+               <label for="gift">
+                    {{this.name}}, 
+                </label>
+                <select name="gift" id="">
+                    <option value="">Brak</option>
+                        {{#each ../gifts}}
+                       
+                             <option value="{{this.name}}"
+                                {{#if (ifEquals ../this.gift this.name)}}
+                                    selected
+                                {{/if}}
+                                >{{this.name}}</option>
+                        {{/each}}
+
+                    >
+
+                </select>
+                
+                <button>Zapisz prezent</button>
+
+            </li>
+        {{/each}}
+    </ul>
+
+<h2>Dodaj dziecko do listy</h2>
+<form>
+    <label for="">
+        Imię
+        <input >
+    </label>
+    <button type="submit">Dodaj</button>
+</form>
