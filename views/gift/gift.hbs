@@ -4,24 +4,25 @@
     <ul>
         {{#each gifts}}
             <li>
-                {{this.id}}:  
-                {{this.name}}, 
-                {{this.count}}, 
-                <button>Zapisz prezent</button>
+                {{this.name}}: {{this.count}}, 
+               
 
             </li>
         {{/each}}
     </ul>
 
 <h2>Dodaj prezent</h2>
-<form>
+<form action="/gifts" method="POST">
     <label for="">
-        Nazwa
-        <input >
+        Nazwa:
+        <input name="name">
     </label>
     <label for="">
-        Ilość w magazynie
-        <input type="number" min="0">
+        Ilość:
+        <input name="count" type=" " min="1">
+        {{#if error}}
+        {{error}}
+        {{/if}}
     </label>
     <button type="submit">Dodaj</button>
 </form>
