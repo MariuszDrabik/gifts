@@ -1,13 +1,12 @@
-import * as dotenv from 'dotenv' 
-dotenv.config()
-import express from 'express';
-import methodOverride from 'method-override';
-import { engine } from 'express-handlebars';
-import { handleError } from './utils/errors.js';
-import { homeRouter } from './routers/home.js';
-import { childRouter } from './routers/child.js';
-import { giftRouter } from './routers/gift.js';
-import { handlebarsHelpers } from './utils/helpers.js';
+require('dotenv').config();
+const express = require('express')
+const methodOverride = require('method-override')
+const { engine } = require('express-handlebars');
+const { handleError } = require('./utils/errors.js');
+const { homeRouter } = require('./routers/home.js');
+const { childRouter } = require('./routers/child.js');
+const { giftRouter } = require('./routers/gift.js');
+const { handlebarsHelpers } = require('./utils/helpers.js');
 
 
 

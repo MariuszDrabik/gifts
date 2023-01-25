@@ -1,17 +1,17 @@
-import mysqlPromise from "mysql2/promise.js";
+const mysql = require('mysql2/promise');
 
-
-const conn = await mysqlPromise.createPool({
+const conn = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'password123',
     database: 'gifts_santa',
     port: 3307,
+    namedPlaceholders: true,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
   });
 
-  export {
+  module.exports = {
     conn
   }

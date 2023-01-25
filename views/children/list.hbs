@@ -1,39 +1,38 @@
 {{>head seo='Lista dzieci'}}
 
     <h1>Lista Dzieci</h1>
-    <ul>
-        {{#each children as | chid |}}
+        {{#each children}}
+        <form action="/child/gift/{{this.id}}?_method=PATCH" method="POST">
             <li>
                 {{this.id}}:  
-               <label for="gift">
+               <label >
                     {{this.name}}, 
                 </label>
-                <select name="gift" id="">
+                <select name="gift_id" id="">
                     <option value="">Brak</option>
                         {{#each ../gifts}}
                        
-                             <option value="{{this.name}}"
-                                {{#if (ifEquals ../this.gift this.name)}}
+                             <option value="{{this.id}}"
+                                {{#if (ifEquals ../this.gift_id this.id)}}
                                     selected
                                 {{/if}}
                                 >{{this.name}}</option>
                         {{/each}}
 
-                    >
+                    
 
                 </select>
                 
-                <button>Zapisz prezent</button>
-
+                <button type="submit">Zapisz prezent</button>
             </li>
+        </form>
         {{/each}}
     </ul>
-
 <h2>Dodaj dziecko do listy</h2>
-<form>
-    <label for="">
+<form action"/children" method="POST">
+    <label for="name">
         Imię
-        <input >
+        <input name="name">
     </label>
     <button type="submit">Dodaj</button>
 </form>

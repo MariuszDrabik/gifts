@@ -18,7 +18,7 @@ function escapeHtml(htmlStr) {
  }
 
 
-export {
+module.exports = {
     handlebarsHelpers,
     escapeHtml
 }

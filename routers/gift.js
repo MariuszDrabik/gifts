@@ -1,6 +1,6 @@
-import { Router } from 'express';
-import { GiftRecord } from '../records/gift.record.js';
-import { escapeHtml } from '../utils/helpers.js';
+const Router = require('express');
+const { GiftRecord } = require('../records/gift.record.js');
+const { escapeHtml } = require('../utils/helpers.js');
 
 
 const giftRouter = Router();
@@ -14,24 +14,28 @@ giftRouter
         });
     })
 
-    .post('/', async (req, res) => {
+    .post('/', async (req, res, next) => {
         const gifts = await GiftRecord.listAll();
-        const data = req.body;
-        const name = escapeHtml(data.name);
-        const count = Number(escapeHtml(data.count));
+        const data = {
+            name: escapeHtml(req.body.name),
+            count: Number(escapeHtml(req.body.count)),
+        };
+  
 
-        if (isNaN(count)) {
-            res.render('gift/gift', {
+        try {
+            const gift =new GiftRecord(data);
+            gift.save()
+            return res.redirect('gifts');
+            
+        } catch(error) {
+            console.log(error);
+            return res.render('gift/gift', {
                 gifts,
-                error: 'Musi liczba'
+                error: error
             });
-            return
         }
-        console.log(name, count);
-
-        res.redirect('/gifts');
     })
 
-export {
+module.exports = {
     giftRouter
 }

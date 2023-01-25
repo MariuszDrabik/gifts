@@ -1,4 +1,4 @@
-import { Router } from 'express';
+const { Router } = require("express");
 
 const homeRouter = Router();
 
@@ -7,6 +7,6 @@ homeRouter
         res.redirect('/child');
     });
 
-export {
+module.exports = {
     homeRouter
 }

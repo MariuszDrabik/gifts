@@ -1,10 +1,10 @@
 {{>head seo='Lista prezentów'}}
 
     <h1>Lista prezentów</h1>
-    <ul>
+    <ul class="gifts">
         {{#each gifts}}
-            <li>
-                {{this.name}}: {{this.count}}, 
+            <li class="gifts">
+                <span class="name">{{this.name}}:</span> <span> {{this.count}} szt. </span>
                
 
             </li>
@@ -21,7 +21,7 @@
         Ilość:
         <input name="count" type=" " min="1">
         {{#if error}}
-        {{error}}
+        {{>errors}}
         {{/if}}
     </label>
     <button type="submit">Dodaj</button>

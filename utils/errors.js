@@ -29,7 +29,7 @@ function handleError(err, req, res, next) {
 }
 
 
-export {
+module.exports = {
     handleError,
     ValidationError,
     NotFoundError,

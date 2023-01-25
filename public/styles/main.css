@@ -20,3 +20,17 @@ body {
 ul {
     list-style: none;
 }
+
+.gifts {
+    width: 260px;
+}
+
+.gifts li {
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+}
+.name {
+    width: 50%;
+    text-align: right;
+}
